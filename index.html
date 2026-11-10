@@ -50,8 +50,8 @@ h2{font-size:clamp(2.05rem,4.4vw,3.05rem)}
 h3{font-size:1.45rem}
 h4{font-size:1.15rem}
 p{margin:0}
-p.j,.j p,.j li{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
-.cover .problema,.cover .quien span,.lead,.decision li span,.decision .paso,.dato p,.fig figcaption,.nota,.iconos li span,.preguntas li span,.caso .cuerpo p,.caso .det li,.caso .det p,.caso > footer span,.banco p,.banco li,.mod dd,.linea > p.intro,.consulta,.hip span,.metodo li,.metodo p,.ref,.fase li,.fase p,.opcion li,.primer p,.principios span,.resp li,.equipo p,.equipo li,.cierre p,.cierre .form span,.sintesis p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+p.j,.j p,.j li{text-align:justify;-webkit-hyphens:manual;hyphens:manual}
+.cover .problema,.cover .quien span,.lead,.decision li span,.decision .paso,.dato p,.fig figcaption,.nota,.iconos li span,.preguntas li span,.caso .cuerpo p,.caso .det li,.caso .det p,.caso > footer span,.banco p,.banco li,.mod dd,.linea > p.intro,.consulta,.hip span,.metodo li,.metodo p,.ref,.fase li,.fase p,.opcion li,.primer p,.principios span,.resp li,.equipo p,.equipo li,.cierre p,.cierre .form span,.sintesis p{text-align:justify;-webkit-hyphens:manual;hyphens:manual}
 .label,.mono,.fuente,.eyebrow,.caso .tit{text-align:left!important;-webkit-hyphens:manual!important;hyphens:manual!important}
 a{color:var(--accent-ink);text-underline-offset:3px}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
@@ -288,6 +288,21 @@ section.s{scroll-margin-top:3.4rem}
 .fuentes a{color:#C9DCDF}
 .pie{font-family:var(--mono);font-size:.72rem;color:var(--on-deep-muted);grid-column:1/-1}
 
+/* v5 */
+.titulo-fig{font-family:var(--mono);font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.decision .mini{margin:0;background:#ffffff0d;padding:.6rem .7rem .3rem}
+.decision .mini svg{width:100%;height:auto;display:block}
+.costos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.costos div{background:var(--surface);padding:.9rem 1rem;display:grid;gap:.25rem;align-content:start;border-top:3px solid var(--accent)}
+.costos b{font-family:var(--display);font-size:1.12rem;font-weight:600;line-height:1.15}
+.costos span{font-size:.92rem;color:var(--muted)}
+.pasos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.pasos li{background:var(--surface);border:1px solid var(--line);padding:1rem 1.1rem;display:grid;gap:.35rem;align-content:start}
+.pasos i{font-style:normal;width:1.8rem;height:1.8rem;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:700;color:#fff}
+.pasos li:nth-child(1) i{background:var(--steel)}.pasos li:nth-child(2) i{background:var(--accent)}.pasos li:nth-child(3) i{background:var(--sage)}.pasos li:nth-child(4) i{background:var(--deep-2)}
+.pasos b{font-family:var(--display);font-size:1.3rem;font-weight:600}
+.pasos span{font-size:.94rem;text-align:justify}
+@media (max-width:820px){.costos,.pasos{grid-template-columns:minmax(0,1fr)}}
 /* v4: planteado, tabla de valor, anexo */
 .planteado{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);padding:1.1rem 1.2rem;display:grid;gap:.6rem;align-content:start}
 .planteado.confirmar{border-top-color:var(--sage)}
@@ -304,7 +319,7 @@ section.s{scroll-margin-top:3.4rem}
 .exp-tabla th:nth-child(4){width:auto}
 .l1{color:var(--steel)}.l2{color:var(--accent-ink)}.l3{color:var(--sage)}.l4{color:var(--deep-2)}
 .exp-tabla td:first-child{font-weight:400}
-.valor-tabla td{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+.valor-tabla td{text-align:justify;-webkit-hyphens:manual;hyphens:manual}
 .exp-tabla .sub{display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-top:.2rem}
 .resp3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .resp3 > div:nth-child(3){border-top-color:var(--accent)}
@@ -460,10 +475,10 @@ details.anx[open] > summary::after{content:"−"}
   .resp ul{font-size:8.9pt}
   .planteado ul,.dato p:not(.t){font-size:8.6pt}
   .dato{padding:2.5mm 3.5mm}
-  #reto .fig svg{max-height:58mm}
-  #reto .head{margin-bottom:4mm}
+  #situacion .fig svg{max-height:58mm}
+  #situacion .head{margin-bottom:4mm}
   .grid2{gap:5mm}
-  #reto .grid2{margin-bottom:4mm!important}
+  #situacion .grid2{margin-bottom:4mm!important}
   .exp-tabla td{font-size:8.4pt}
   #experiencia .tabla-wrap{margin-top:4mm!important}
   #valor .comparacion{margin-bottom:4mm!important}
@@ -473,6 +488,20 @@ details.anx[open] > summary::after{content:"−"}
   #valor .valor-tabla td{padding:1.2mm 2mm;font-size:8.3pt;line-height:1.3}
   #valor .head{margin-bottom:4mm}
   #valor .nota{margin-top:2mm!important}
+  .costos{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .costos div{padding:2.5mm 3mm}.costos b{font-size:10.5pt}.costos span{font-size:8.5pt}
+  .pasos{grid-template-columns:repeat(2,minmax(0,1fr));gap:3mm}
+  .pasos li{padding:3mm;break-inside:avoid}.pasos b{font-size:12pt}.pasos span{font-size:8.6pt}
+  #situacion .head,#contexto .head,#entregables .head,#alcance .head{margin-bottom:4mm}
+  #situacion .fig svg{max-height:50mm}
+  #situacion .dato p:not(.t){font-size:8pt;line-height:1.3}
+  #situacion .dato b{font-size:20pt}
+  #situacion .fig{padding:2mm 3mm}
+  #situacion .lead{font-size:10.6pt}
+  #situacion .grid2{margin-bottom:4mm!important}
+  .decision .mini{padding:1.5mm 2mm 0}
+  .banco-corto .nota{font-size:8.2pt}
+  #entregables .valor-tabla td{padding:1.6mm 2.2mm;font-size:8.6pt;line-height:1.35}
   #servicios .head{margin-bottom:4mm}
   .mod{padding-top:2mm;gap:1mm}
   .mod dl{font-size:7.9pt;line-height:1.3;gap:.6mm}
@@ -497,12 +526,13 @@ details.anx[open] > summary::after{content:"−"}
     <a class="brand" href="#inicio">Propuesta · <span>INGEVÍAS</span></a>
     <ol>
       <li><a class="sec" href="#resumen">Síntesis</a></li>
-      <li><a class="sec" href="#reto">Lo que está en juego</a></li>
-      <li><a class="sec" href="#lectura">Por qué se repiten</a></li>
-      <li><a class="sec" href="#valor">Qué aporta</a></li>
-      <li><a class="sec" href="#experiencia">Experiencia</a></li>
+      <li><a class="sec" href="#contexto">Contexto</a></li>
+      <li><a class="sec" href="#situacion">Situación</a></li>
+      <li><a class="sec" href="#valor">Propuesta</a></li>
+      <li><a class="sec" href="#entregables">Entregables</a></li>
+      <li><a class="sec" href="#alcance">Alcance</a></li>
       <li><a class="sec" href="#ruta">Cómo empezar</a></li>
-      <li><a class="sec" href="#trabajo">Cómo trabajamos</a></li>
+      <li><a class="sec" href="#experiencia">Experiencia</a></li>
       <li><a class="sec" href="#perfil">Perfil</a></li>
       <li><a class="sec" href="#anexo">Anexo</a></li>
     </ol>
@@ -517,19 +547,20 @@ details.anx[open] > summary::after{content:"−"}
     <div style="display:grid;gap:1.4rem">
       <p class="para">Para la junta directiva y la gerencia de INGEVÍAS</p>
       <h1>Diálogo social y gestión territorial para <em>los proyectos viales</em> de INGEVÍAS</h1>
-      <p class="problema">Anticipar los conflictos que detienen las obras, preparar el diálogo con comunidades e instituciones y cumplir lo que se acuerda.</p>
+      <p class="problema">Anticipar los conflictos con potencial de retrasar o suspender las obras, preparar el diálogo con comunidades e instituciones y cumplir lo que se acuerda.</p>
     </div>
     <div class="quien"><strong>Jorge Enrique Gil Cepeda</strong><span>Politólogo · Especialista en Mercados y Políticas del Suelo en América Latina · Magíster en Periodismo · Bogotá</span><span>Experiencia en consulta previa, diálogo con comunidades étnicas y víctimas, y articulación de entidades públicas</span></div>
     <ol class="indice" aria-label="Contenido">
       <li><a href="#resumen"><span>01</span>Síntesis para decidir</a></li>
-      <li><a href="#reto"><span>02</span>Lo que está en juego</a></li>
-      <li><a href="#lectura"><span>03</span>Por qué los conflictos se repiten</a></li>
-      <li><a href="#valor"><span>04</span>Qué recibe INGEVÍAS</a></li>
-      <li><a href="#experiencia"><span>05</span>Experiencia</a></li>
-      <li><a href="#ruta"><span>06</span>Cómo empezar</a></li>
-      <li><a href="#trabajo"><span>07</span>Cómo trabajamos</a></li>
-      <li><a href="#perfil"><span>08</span>Perfil y contacto</a></li>
-      <li><a href="#anexo"><span>A</span>Anexo: casos, módulos y método</a></li>
+      <li><a href="#contexto"><span>02</span>El contexto</a></li>
+      <li><a href="#situacion"><span>03</span>La situación de INGEVÍAS</a></li>
+      <li><a href="#valor"><span>04</span>Propuesta de valor y método</a></li>
+      <li><a href="#entregables"><span>05</span>Entregables y resultados</a></li>
+      <li><a href="#alcance"><span>06</span>Alcance y límites</a></li>
+      <li><a href="#ruta"><span>07</span>Cómo empezar</a></li>
+      <li><a href="#experiencia"><span>08</span>Experiencia</a></li>
+      <li><a href="#perfil"><span>09</span>Perfil y contacto</a></li>
+      <li><a href="#anexo"><span>A</span>Anexo: casos, servicios y método</a></li>
     </ol>
   </div>
 </header>
@@ -540,20 +571,38 @@ details.anx[open] > summary::after{content:"−"}
   <div class="wrap">
     <div class="head">
       <p class="eyebrow"><b>01</b> Síntesis para decidir</p>
-      <h2 id="h-resumen">Anticipar los conflictos que detienen las obras y cumplir lo que se acuerda</h2>
+      <h2 id="h-resumen">Anticipar los conflictos que pueden retrasar o suspender las obras y cumplir lo que se acuerda</h2>
     </div>
     <div class="sintesis">
       <div class="bloques">
-        <div class="bloque"><span class="num">1</span><div><h3>Lo que nos han planteado</h3><p class="j">Varios proyectos se han suspendido por dificultades en el diálogo con las comunidades, con problemas en La Guajira, el Chocó y el Cauca. Además, el personal contratado en cada zona se va con frecuencia.</p></div></div>
-        <div class="bloque"><span class="num">2</span><div><h3>Por qué importa</h3><p class="j">Cada suspensión cuesta días de obra, tiempo de la gerencia y confianza con las comunidades y las entidades.</p></div></div>
+        <div class="bloque"><span class="num">1</span><div><h3>Lo que ha planteado la empresa</h3><p class="j">Varios proyectos se han suspendido por dificultades en el diálogo con las comunidades, con problemas en La Guajira, el Chocó y el Cauca. Además, el personal contratado en cada zona se va con frecuencia.</p></div></div>
+        <div class="bloque"><span class="num">2</span><div><h3>Por qué importa</h3><p class="j">Cada suspensión genera demoras y sobrecostos: maquinaria y personal parados, reprogramación y posibles reclamaciones contractuales. Eso pone en riesgo la rentabilidad del proyecto y su entrega a tiempo.</p></div></div>
         <div class="bloque"><span class="num">3</span><div><h3>Qué aporta</h3><p class="j">El equipo social de la empresa atiende las obligaciones del contrato. Este acompañamiento le suma tres cosas: saber qué conflicto puede escalar y por qué, llegar a cada espacio de diálogo con acuerdos que se pueden cumplir y dar a la junta un seguimiento verificable de los compromisos.</p></div></div>
-        <div class="bloque"><span class="num">4</span><div><h3>El respaldo</h3><p class="j">Delegado de la Consejería Presidencial para las Regiones en la consulta previa con autoridades wayuu (964 acuerdos, 68 de ellos sobre movilidad) y cerca de diez años de trabajo con comunidades étnicas, víctimas y entidades públicas.</p></div></div>
+        <div class="bloque"><span class="num">4</span><div><h3>El respaldo</h3><p class="j">Jorge Gil fue delegado de la Consejería Presidencial para las Regiones en la consulta previa con autoridades wayuu (964 acuerdos, 68 de ellos sobre movilidad) y tiene cerca de diez años de trabajo con comunidades étnicas, víctimas y entidades públicas.</p></div></div>
       </div>
       <aside class="decision" aria-label="Decisión que se propone">
         <p class="label">La decisión que se propone</p>
         <h3>Empezar con un diagnóstico de seis semanas en el Cauca</h3>
+        <figure class="mini" aria-label="Duración de las opciones A y B en semanas">
+          <svg viewBox="0 0 320 96" role="img" aria-labelledby="t-mini">
+            <title id="t-mini">Opción A: semanas 1 a 6. Opción B: diagnóstico en las semanas 1 a 8 y estrategia y seguimiento en las semanas 9 a 16.</title>
+            <g font-family="IBM Plex Mono, monospace" font-size="9" fill="#A8BFC3">
+              <text x="62" y="10">S1</text><text x="132" y="10">S6</text><text x="180" y="10">S9</text><text x="300" y="10" text-anchor="end">S16</text>
+            </g>
+            <line x1="62" y1="16" x2="62" y2="90" stroke="#ffffff22"/><line x1="146" y1="16" x2="146" y2="90" stroke="#ffffff22"/><line x1="174" y1="16" x2="174" y2="90" stroke="#ffffff22"/><line x1="300" y1="16" x2="300" y2="90" stroke="#ffffff22"/>
+            <g font-family="Barlow, sans-serif" font-size="11" fill="#EEF3F1" font-weight="600">
+              <text x="0" y="36">Opción A</text><text x="0" y="70">Opción B</text>
+            </g>
+            <rect x="62" y="26" width="84" height="14" rx="2" fill="#86BCCB"/>
+            <text x="150" y="37" font-family="Barlow, sans-serif" font-size="10" fill="#A8BFC3">6 semanas</text>
+            <rect x="62" y="60" width="112" height="14" rx="2" fill="#F0A47E"/>
+            <rect x="176" y="60" width="124" height="14" rx="2" fill="#F0A47E" opacity=".55"/>
+            <text x="66" y="71" font-family="Barlow, sans-serif" font-size="9.5" fill="#0F3540" font-weight="600">Diagnóstico</text>
+            <text x="180" y="71" font-family="Barlow, sans-serif" font-size="9.5" fill="#0F3540" font-weight="600">Estrategia y seguimiento</text>
+          </svg>
+        </figure>
         <ul>
-          <li><b>Opción A · 6 semanas · recomendada</b><span>Diagnóstico socioterritorial del Anillo del Macizo, o del proyecto que la empresa priorice, e informe a la junta.</span></li>
+          <li><b>Opción A · 6 semanas · recomendada</b><span>Diagnóstico socioterritorial del Anillo del Macizo, o del proyecto que la empresa priorice, con el costo estimado de las suspensiones e informe a la junta.</span></li>
           <li><b>Opción B · 16 semanas</b><span>Diagnóstico de dos proyectos, estrategia de diálogo, seguimiento de compromisos y asesoría a la junta. Conviene si un proyecto ya está en crisis.</span></li>
           <li><b>Módulo adicional</b><span>Estudio sobre la permanencia del personal local, combinable con A o B.</span></li>
         </ul>
@@ -563,63 +612,18 @@ details.anx[open] > summary::after{content:"−"}
   </div>
 </section>
 
-<section class="s" id="reto" aria-labelledby="h-reto">
+<section class="s" id="contexto" aria-labelledby="h-contexto">
   <div class="wrap">
     <div class="head">
-      <p class="eyebrow"><b>02</b> Lo que está en juego</p>
-      <h2 id="h-reto">Cada suspensión cuesta obra, tiempo de la gerencia y confianza</h2>
-      <p class="lead j">Una obra vial convive durante años con comunidades, autoridades locales y entidades nacionales. Cada compromiso, cada contratación local y cada cierre de vía construye o desgasta esa relación.</p>
-    </div>
-    <div class="grid2" style="margin-bottom:2rem">
-      <div class="planteado">
-        <p class="label">Lo que nos han planteado</p>
-        <ul class="j">
-          <li>Suspensiones de obra por dificultades en el diálogo con las comunidades.</li>
-          <li>Problemas de relación con comunidades en La Guajira, el Chocó y el Cauca.</li>
-          <li>Salida frecuente del personal contratado en cada zona.</li>
-        </ul>
-      </div>
-      <div class="planteado confirmar">
-        <p class="label">Lo que confirmaremos con sus equipos</p>
-        <ul class="j">
-          <li>Las causas de cada suspensión y cuánto duró.</li>
-          <li>Los compromisos sociales abiertos en cada proyecto.</li>
-          <li>Los registros de ingreso y retiro de personal.</li>
-        </ul>
-      </div>
-    </div>
-    <p class="label" style="margin-bottom:.7rem">Lo que muestra la información pública</p>
-    <div class="datos">
-      <div class="dato"><b>6</b><p class="t">contratos públicos registrados en SECOP II</p><p>En consorcio, con el Instituto Nacional de Vías y entidades de Tolima, Cauca y Boyacá: 4 con plazo vigente y 2 suspendidos. Solo incluye los contratos de obra pública registrados en ese sistema.</p></div>
-      <div class="dato"><b>3</b><p class="t">incluyen gestión social en su objeto</p><p>Los tres contratos con el Instituto Nacional de Vías dicen en su objeto «gestión predial, social y ambiental sostenible».</p></div>
-      <div class="dato"><b>2030</b><p class="t">plazo del Anillo del Macizo</p><p>El contrato de mayor plazo registrado, en el Cauca, donde coinciden territorios indígenas, negros y campesinos y riesgos de seguridad documentados en obras de la región.</p></div>
-    </div>
-    <figure class="fig">
-      <div class="scroll">
-      <svg viewBox="0 0 900 290" role="img" aria-labelledby="t-cronograma d-cronograma">
-        <title id="t-cronograma">Plazos de los seis contratos registrados en SECOP II</title>
-        <desc id="d-cronograma">Barras horizontales de 2021 a 2031. Anillo del Macizo de junio de 2021 a septiembre de 2030. Transversal del Libertador de marzo de 2021 a diciembre de 2026. Vías y Equipos del Café de marzo de 2021 a diciembre de 2026. Coyaima de septiembre de 2023 a diciembre de 2026. Buenos Aires, suspendido, de febrero de 2023 a diciembre de 2025. Ruta 6101, suspendido, de marzo de 2024 a marzo de 2026. Línea de hoy en noviembre de 2026.</desc>
-        <defs><pattern id="rayado" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="var(--steel-soft)"/><line x1="0" y1="0" x2="0" y2="6" stroke="var(--steel)" stroke-width="2.2"/></pattern></defs>
-        <line class="grid" x1="300.0" y1="22" x2="300.0" y2="262"/><text x="300.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2021</text><line class="grid" x1="353.0" y1="22" x2="353.0" y2="262"/><text x="353.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2022</text><line class="grid" x1="406.0" y1="22" x2="406.0" y2="262"/><text x="406.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2023</text><line class="grid" x1="459.0" y1="22" x2="459.0" y2="262"/><text x="459.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2024</text><line class="grid" x1="512.0" y1="22" x2="512.0" y2="262"/><text x="512.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2025</text><line class="grid" x1="565.0" y1="22" x2="565.0" y2="262"/><text x="565.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2026</text><line class="grid" x1="618.0" y1="22" x2="618.0" y2="262"/><text x="618.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2027</text><line class="grid" x1="671.0" y1="22" x2="671.0" y2="262"/><text x="671.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2028</text><line class="grid" x1="724.0" y1="22" x2="724.0" y2="262"/><text x="724.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2029</text><line class="grid" x1="777.0" y1="22" x2="777.0" y2="262"/><text x="777.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2030</text><line class="grid" x1="830.0" y1="22" x2="830.0" y2="262"/><text x="830.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2031</text><text x="0" y="48" class="n" font-size="15">Anillo del Macizo Colombiano</text><text x="0" y="63" font-size="11" fill="var(--muted)">Instituto Nacional de Vías · Cauca</text><rect class="bar-ok" x="322.1" y="40" width="490.2" height="18" rx="2"/><text x="818.3" y="53" font-size="10" fill="var(--muted)">sep. 2030</text><text x="0" y="86" class="n" font-size="15">Transversal del Libertador</text><text x="0" y="101" font-size="11" fill="var(--muted)">Instituto Nacional de Vías · Cauca y Huila</text><rect class="bar-ok" x="308.8" y="78" width="304.8" height="18" rx="2"/><text x="619.6" y="91" font-size="10" fill="var(--muted)">dic. 2026</text><text x="0" y="124" class="n" font-size="15">Vías y Equipos del Café</text><text x="0" y="139" font-size="11" fill="var(--muted)">Instituto Nacional de Vías · Quindío y Valle</text><rect class="bar-ok" x="308.8" y="116" width="304.8" height="18" rx="2"/><text x="619.6" y="129" font-size="10" fill="var(--muted)">dic. 2026</text><text x="0" y="162" class="n" font-size="15">Coyaima</text><text x="0" y="177" font-size="11" fill="var(--muted)">Tolima</text><rect class="bar-ok" x="441.3" y="154" width="172.3" height="18" rx="2"/><text x="619.6" y="167" font-size="10" fill="var(--muted)">dic. 2026</text><text x="0" y="200" class="n" font-size="15">Vial Buenos Aires</text><text x="0" y="215" font-size="11" fill="var(--muted)">Cauca · suspendido</text><rect class="bar-sus" x="410.4" y="192" width="150.2" height="18" rx="2"/><text x="566.6" y="205" font-size="10" fill="var(--muted)">dic. 2025</text><text x="0" y="238" class="n" font-size="15">Mejoramiento Ruta 6101</text><text x="0" y="253" font-size="11" fill="var(--muted)">Boyacá · suspendido</text><rect class="bar-sus" x="467.8" y="230" width="106.0" height="18" rx="2"/><text x="579.8" y="243" font-size="10" fill="var(--muted)">mar. 2026</text><line class="hoy" x1="609.2" y1="22" x2="609.2" y2="266"/><text class="hoy-t" x="614.2" y="278" font-size="11" font-weight="500">hoy · nov. 2026</text>
-      </svg>
-      </div>
-      <figcaption>Plazos registrados en SECOP II (consulta del 4 de noviembre de 2026). Barras rayadas: contratos con estado «Suspendido» y fecha de fin vencida en el registro.</figcaption>
-    </figure>
-    <p class="nota j" style="margin-top:1.2rem">En proyectos de infraestructura, la demora es el costo más citado de los conflictos con comunidades, y el tiempo de la gerencia dedicado a atenderlos es el más subestimado (Davis y Franks, Harvard Kennedy School, 2014, sobre 50 casos del sector extractivo).</p>
-  </div>
-</section>
-
-<section class="s" id="lectura" aria-labelledby="h-lectura">
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow"><b>03</b> Por qué los conflictos se repiten</p>
-      <h2 id="h-lectura">El conflicto tiene raíces fuera de la obra y se puede anticipar</h2>
-      <p class="lead j">Atender reuniones y responder reclamos uno por uno deja por fuera lo que explica la mayoría de las tensiones: quién decide en cada comunidad, qué se prometió antes, qué depende del Estado y qué puede cumplir la empresa.</p>
+      <p class="eyebrow"><b>02</b> El contexto</p>
+      <h2 id="h-contexto">Los conflictos con comunidades suelen tener causas externas a la obra y se pueden anticipar</h2>
+      <p class="lead j">En una obra vial, las comunidades son partes interesadas tan determinantes como el contratante y las entidades públicas. La guía de dirección de proyectos del Project Management Institute (PMBOK, 7.ª edición, 2021) incluye el relacionamiento efectivo con las partes interesadas entre sus doce principios. Esta propuesta aplica ese principio a las comunidades de cada proyecto.</p>
     </div>
     <div class="relaciones">
       <figure style="margin:0">
+        <figcaption class="titulo-fig">Partes interesadas en una obra vial</figcaption>
         <svg viewBox="0 0 540 475" role="img" aria-labelledby="t-red d-red">
-          <title id="t-red">El proyecto vial y sus relaciones</title>
+          <title id="t-red">Partes interesadas en una obra vial</title>
           <desc id="d-red">Diagrama con el proyecto vial en el centro, conectado con comunidades indígenas, comunidades negras, comunidades campesinas y juntas de acción comunal, personal contratado en la zona, alcaldías y gobernación, Instituto Nacional de Vías, Ministerio del Interior, y Defensoría y Procuraduría. Las líneas punteadas señalan compromisos que dependen de más de un actor.</desc>
           <path class="topo" d="M20 330 C120 280 210 360 320 300 S470 250 510 300"/><path class="topo" d="M10 380 C140 330 240 410 360 350 S480 320 515 360"/><path class="topo" d="M30 90 C150 40 250 120 350 70 S470 30 510 80"/>
           <line class="ln k" x1="270" y1="225" x2="270" y2="62"/><line class="ln k" x1="270" y1="225" x2="440" y2="115"/><line class="ln k" x1="270" y1="225" x2="470" y2="250"/><line class="ln" x1="270" y1="225" x2="410" y2="375"/><line class="ln k" x1="270" y1="225" x2="130" y2="375"/><line class="ln" x1="270" y1="225" x2="70" y2="250"/><line class="ln k" x1="270" y1="225" x2="100" y2="115"/><line class="ln" x1="270" y1="225" x2="270" y2="395"/><line class="ln" x1="270" y1="62" x2="100" y2="115" opacity=".55"/><line class="ln" x1="440" y1="115" x2="100" y2="115" opacity=".55"/><line class="ln" x1="130" y1="375" x2="470" y2="250" opacity=".55"/><line class="ln" x1="70" y1="250" x2="130" y2="375" opacity=".55"/><line class="ln" x1="270" y1="395" x2="270" y2="62" opacity=".55"/><circle class="centro" cx="270" cy="225" r="58"/><text class="c" x="270" y="221" text-anchor="middle">Proyecto</text><text class="c" x="270" y="242" text-anchor="middle">vial</text><circle class="nodo" cx="270" cy="62" r="7"/><text x="270" y="30" text-anchor="middle">Comunidades</text><text x="270" y="46" text-anchor="middle" fill="var(--muted)">indígenas</text><circle class="nodo" cx="440" cy="115" r="7"/><text x="452" y="92" text-anchor="start">Comunidades</text><text x="452" y="108" text-anchor="start" fill="var(--muted)">negras</text><circle class="nodo" cx="470" cy="250" r="7"/><text x="535" y="282" text-anchor="end">Comunidades campesinas</text><text x="535" y="298" text-anchor="end" fill="var(--muted)">y juntas comunales</text><circle class="nodo" cx="410" cy="375" r="7"/><text x="410" y="402" text-anchor="middle">Personal contratado</text><text x="410" y="418" text-anchor="middle" fill="var(--muted)">en la zona</text><circle class="nodo" cx="130" cy="375" r="7"/><text x="130" y="402" text-anchor="middle">Alcaldías y</text><text x="130" y="418" text-anchor="middle" fill="var(--muted)">gobernación</text><circle class="nodo" cx="70" cy="250" r="7"/><text x="70" y="280" text-anchor="middle">Instituto Nacional</text><text x="70" y="296" text-anchor="middle" fill="var(--muted)">de Vías</text><circle class="nodo" cx="100" cy="115" r="7"/><text x="88" y="92" text-anchor="end">Ministerio</text><text x="88" y="108" text-anchor="end" fill="var(--muted)">del Interior</text><circle class="nodo" cx="270" cy="395" r="7"/><text x="270" y="422" text-anchor="middle">Defensoría y</text><text x="270" y="438" text-anchor="middle" fill="var(--muted)">Procuraduría</text><line class="ln k" x1="150" y1="462" x2="182" y2="462"/><text x="190" y="466" font-size="12" fill="var(--muted)">compromisos que dependen de más de un actor</text>
@@ -637,29 +641,82 @@ details.anx[open] > summary::after{content:"−"}
     </div>
     <div class="banco banco-corto">
       <div>
-        <p class="label">Investigación propia</p>
+        <p class="label">Investigación propia sobre el sector</p>
         <p class="big">29</p>
-        <h3>casos de conflictividad en obras</h3>
+        <h3>casos de conflictividad en obras de infraestructura en Colombia y otros países</h3>
+        <p class="mono" style="font-size:.72rem;color:var(--muted)">No incluye proyectos de INGEVÍAS.</p>
       </div>
       <div>
         <p class="label">Lo que muestran</p>
         <ul class="j">
-          <li>Muchos bloqueos tienen causas ajenas a la obra: la vía funciona como lugar para reclamar al Estado.</li>
+          <li>Muchos bloqueos tienen causas externas a la obra: la vía funciona como lugar para reclamar al Estado.</li>
           <li>Los acuerdos sin seguimiento o sin todos los actores pueden reabrir el conflicto.</li>
           <li>Donde hubo acuerdos protocolizados, la empresa negoció directamente y el Estado actuó como garante.</li>
         </ul>
-        <p class="mono" style="font-size:.72rem;color:var(--muted)">Resultados principales en el anexo A5.</p>
+        <p class="nota j">En el sector extractivo, la demora es el costo más citado de los conflictos con comunidades, y el tiempo de la gerencia dedicado a atenderlos es el más subestimado (Davis y Franks, Harvard Kennedy School, 2014, sobre 50 casos). Resultados del banco en el anexo A5.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="s" id="situacion" aria-labelledby="h-situacion">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><b>03</b> La situación de INGEVÍAS</p>
+      <h2 id="h-situacion">Cada suspensión genera demoras y sobrecostos, y pone en riesgo la rentabilidad del proyecto</h2>
+      <p class="lead j">Una obra vial convive durante años con comunidades, autoridades locales y entidades nacionales. Cada compromiso, cada contratación local y cada cierre de vía construye o desgasta esa relación.</p>
+    </div>
+    <div class="grid2" id="reto" style="margin-bottom:1.6rem">
+      <div class="planteado">
+        <p class="label">Lo que ha planteado la empresa</p>
+        <ul class="j">
+          <li>Suspensiones de obra por dificultades en el diálogo con las comunidades.</li>
+          <li>Problemas de relación con comunidades en La Guajira, el Chocó y el Cauca.</li>
+          <li>Salida frecuente del personal contratado en cada zona.</li>
+        </ul>
+      </div>
+      <div class="planteado confirmar">
+        <p class="label">Lo que el diagnóstico va a identificar</p>
+        <ul class="j">
+          <li>Las causas de cada suspensión y su costo estimado.</li>
+          <li>Los compromisos sociales en riesgo de incumplirse.</li>
+          <li>Por qué se va el personal contratado en cada zona.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="label" style="margin-bottom:.7rem">Qué cuesta una suspensión</p>
+    <div class="costos">
+      <div><b>Maquinaria y personal parados</b><span>Costos fijos que corren sin avance de obra.</span></div>
+      <div><b>Reprogramación</b><span>Cambios de cronograma, frentes y compras.</span></div>
+      <div><b>Reclamaciones contractuales</b><span>Prórrogas, mayores permanencias y disputas con el contratante.</span></div>
+      <div><b>Entrega tardía</b><span>Menor rentabilidad y riesgo reputacional ante la entidad.</span></div>
+    </div>
+    <p class="label" style="margin:1.6rem 0 .7rem">Lo que muestra la información pública</p>
+    <div class="datos">
+      <div class="dato"><b>6</b><p class="t">contratos públicos registrados en SECOP II</p><p>En consorcio, con el Instituto Nacional de Vías y entidades de Tolima, Cauca y Boyacá: 4 con plazo vigente y 2 suspendidos. Solo incluye los contratos de obra pública registrados en ese sistema.</p></div>
+      <div class="dato"><b>3</b><p class="t">incluyen gestión social en su objeto</p><p>Los tres contratos con el Instituto Nacional de Vías dicen en su objeto «gestión predial, social y ambiental sostenible».</p></div>
+      <div class="dato"><b>2030</b><p class="t">plazo del Anillo del Macizo</p><p>Es el contrato con el plazo más largo, en el Cauca. Allí conviven territorios indígenas, afrocolombianos y campesinos, y la prensa ha documentado riesgos de seguridad en obras de la región.</p></div>
+    </div>
+    <figure class="fig">
+      <div class="scroll">
+      <svg viewBox="0 0 900 290" role="img" aria-labelledby="t-cronograma d-cronograma">
+        <title id="t-cronograma">Plazos de los seis contratos registrados en SECOP II</title>
+        <desc id="d-cronograma">Barras horizontales de 2021 a 2031. Anillo del Macizo de junio de 2021 a septiembre de 2030. Transversal del Libertador de marzo de 2021 a diciembre de 2026. Vías y Equipos del Café de marzo de 2021 a diciembre de 2026. Coyaima de septiembre de 2023 a diciembre de 2026. Buenos Aires, suspendido, de febrero de 2023 a diciembre de 2025. Ruta 6101, suspendido, de marzo de 2024 a marzo de 2026. Línea de hoy en noviembre de 2026.</desc>
+        <defs><pattern id="rayado" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="var(--steel-soft)"/><line x1="0" y1="0" x2="0" y2="6" stroke="var(--steel)" stroke-width="2.2"/></pattern></defs>
+        <line class="grid" x1="300.0" y1="22" x2="300.0" y2="262"/><text x="300.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2021</text><line class="grid" x1="353.0" y1="22" x2="353.0" y2="262"/><text x="353.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2022</text><line class="grid" x1="406.0" y1="22" x2="406.0" y2="262"/><text x="406.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2023</text><line class="grid" x1="459.0" y1="22" x2="459.0" y2="262"/><text x="459.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2024</text><line class="grid" x1="512.0" y1="22" x2="512.0" y2="262"/><text x="512.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2025</text><line class="grid" x1="565.0" y1="22" x2="565.0" y2="262"/><text x="565.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2026</text><line class="grid" x1="618.0" y1="22" x2="618.0" y2="262"/><text x="618.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2027</text><line class="grid" x1="671.0" y1="22" x2="671.0" y2="262"/><text x="671.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2028</text><line class="grid" x1="724.0" y1="22" x2="724.0" y2="262"/><text x="724.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2029</text><line class="grid" x1="777.0" y1="22" x2="777.0" y2="262"/><text x="777.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2030</text><line class="grid" x1="830.0" y1="22" x2="830.0" y2="262"/><text x="830.0" y="14" font-size="11" text-anchor="middle" fill="var(--muted)">2031</text><text x="0" y="48" class="n" font-size="15">Anillo del Macizo Colombiano</text><text x="0" y="63" font-size="11" fill="var(--muted)">Instituto Nacional de Vías · Cauca</text><rect class="bar-ok" x="322.1" y="40" width="490.2" height="18" rx="2"/><text x="818.3" y="53" font-size="10" fill="var(--muted)">sep. 2030</text><text x="0" y="86" class="n" font-size="15">Transversal del Libertador</text><text x="0" y="101" font-size="11" fill="var(--muted)">Instituto Nacional de Vías · Cauca y Huila</text><rect class="bar-ok" x="308.8" y="78" width="304.8" height="18" rx="2"/><text x="619.6" y="91" font-size="10" fill="var(--muted)">dic. 2026</text><text x="0" y="124" class="n" font-size="15">Vías y Equipos del Café</text><text x="0" y="139" font-size="11" fill="var(--muted)">Instituto Nacional de Vías · Quindío y Valle</text><rect class="bar-ok" x="308.8" y="116" width="304.8" height="18" rx="2"/><text x="619.6" y="129" font-size="10" fill="var(--muted)">dic. 2026</text><text x="0" y="162" class="n" font-size="15">Coyaima</text><text x="0" y="177" font-size="11" fill="var(--muted)">Tolima</text><rect class="bar-ok" x="441.3" y="154" width="172.3" height="18" rx="2"/><text x="619.6" y="167" font-size="10" fill="var(--muted)">dic. 2026</text><text x="0" y="200" class="n" font-size="15">Vial Buenos Aires</text><text x="0" y="215" font-size="11" fill="var(--muted)">Cauca · suspendido</text><rect class="bar-sus" x="410.4" y="192" width="150.2" height="18" rx="2"/><text x="566.6" y="205" font-size="10" fill="var(--muted)">dic. 2025</text><text x="0" y="238" class="n" font-size="15">Mejoramiento Ruta 6101</text><text x="0" y="253" font-size="11" fill="var(--muted)">Boyacá · suspendido</text><rect class="bar-sus" x="467.8" y="230" width="106.0" height="18" rx="2"/><text x="579.8" y="243" font-size="10" fill="var(--muted)">mar. 2026</text><line class="hoy" x1="609.2" y1="22" x2="609.2" y2="266"/><text class="hoy-t" x="614.2" y="278" font-size="11" font-weight="500">hoy · nov. 2026</text>
+      </svg>
+      </div>
+      <figcaption>Plazos registrados en SECOP II (consulta del 4 de noviembre de 2026). Barras rayadas: contratos con estado «Suspendido» y fecha de fin vencida en el registro.</figcaption>
+    </figure>
   </div>
 </section>
 
 <section class="s" id="valor" aria-labelledby="h-valor">
   <div class="wrap">
     <div class="head">
-      <p class="eyebrow"><b>04</b> Qué aporta este acompañamiento</p>
-      <h2 id="h-valor">Qué recibe INGEVÍAS: entender, dialogar, cumplir y decidir</h2>
-      <p class="lead j">Cada servicio responde a un problema concreto de la obra, deja un producto que la empresa puede usar y tiene un indicador para seguir su avance. Los servicios se contratan por separado o como un programa.</p>
+      <p class="eyebrow"><b>04</b> Propuesta de valor y método</p>
+      <h2 id="h-valor">Herramientas para entender, dialogar, cumplir y decidir</h2>
+      <p class="lead j">El acompañamiento complementa al equipo social de la empresa. Suma la lectura de las comunidades y del Estado, la preparación de cada espacio de diálogo y un seguimiento de compromisos que la junta puede usar para decidir.</p>
     </div>
     <div class="comparacion" style="margin-top:0;margin-bottom:1.8rem">
       <div>
@@ -680,12 +737,30 @@ details.anx[open] > summary::after{content:"−"}
         </ul>
       </div>
     </div>
+    <p class="label" style="margin-bottom:.7rem">El método, en cuatro pasos</p>
+    <ol class="pasos">
+      <li><i>1</i><b>Entender</b><span>Diagnóstico de cada proyecto: partes interesadas, compromisos previos, riesgos y costo de las suspensiones.</span></li>
+      <li><i>2</i><b>Dialogar</b><span>Preparación por separado de cada parte, mediación y actas con responsables, con protocolos para comunidades campesinas, indígenas y afrocolombianas.</span></li>
+      <li><i>3</i><b>Cumplir</b><span>Matriz y tablero de compromisos, con alertas antes de cada vencimiento.</span></li>
+      <li><i>4</i><b>Decidir</b><span>Informes de riesgo social para la junta y procedimientos propios para proyectos futuros.</span></li>
+    </ol>
+    <p class="consulta j"><b>Sobre la consulta previa.</b> La consulta previa es un derecho fundamental de los pueblos indígenas y las comunidades negras. El Estado la garantiza y el Ministerio del Interior dirige el proceso. Cuando un proyecto la requiere, el acompañamiento ayuda a la empresa a identificar sus obligaciones, prepararse, participar de buena fe y cumplir lo acordado, con apoyo jurídico especializado. No reemplaza a las autoridades ni la autonomía de los pueblos.</p>
+  </div>
+</section>
+
+<section class="s" id="entregables" aria-labelledby="h-entregables">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><b>05</b> Entregables y resultados</p>
+      <h2 id="h-entregables">Qué recibe INGEVÍAS y cómo se mide el avance</h2>
+      <p class="lead j">Cada servicio responde a un problema concreto de la obra, deja un producto que la empresa puede usar y tiene un indicador para seguir su avance. Los servicios se contratan por separado o como un programa.</p>
+    </div>
     <div class="tabla-wrap">
     <table class="valor-tabla">
       <caption class="sr">Problema, servicio, producto e indicador</caption>
       <thead><tr><th scope="col">Problema en la obra</th><th scope="col">Servicio</th><th scope="col">Qué recibe la empresa</th><th scope="col">Indicador de seguimiento</th></tr></thead>
       <tbody>
-        <tr><td data-l="Problema">No se sabe qué conflicto puede detener la obra</td><td data-l="Servicio"><span class="lin l1">Entender</span>Diagnóstico socioterritorial</td><td data-l="Recibe">Mapa de actores y riesgos priorizados</td><td data-l="Indicador">Riesgos identificados, con responsable y alerta</td></tr>
+        <tr><td data-l="Problema">No se sabe qué conflicto puede retrasar o suspender la obra</td><td data-l="Servicio"><span class="lin l1">Entender</span>Diagnóstico socioterritorial</td><td data-l="Recibe">Mapa de actores, riesgos priorizados y costo estimado de las suspensiones</td><td data-l="Indicador">Riesgos identificados, con responsable y alerta</td></tr>
         <tr><td data-l="Problema">Personal contratado en la zona que se va</td><td data-l="Servicio"><span class="lin l1">Entender</span>Estudio del personal local</td><td data-l="Recibe">Causas por territorio y plan de retención</td><td data-l="Indicador">Línea base de permanencia por proyecto</td></tr>
         <tr><td data-l="Problema">Reuniones que terminan en nuevas tensiones</td><td data-l="Servicio"><span class="lin l2">Dialogar</span>Estrategia y facilitación de diálogo</td><td data-l="Recibe">Espacios preparados, mediados y con actas</td><td data-l="Indicador">Acuerdos con responsable y fecha</td></tr>
         <tr><td data-l="Problema">Reclamos que dependen del Estado</td><td data-l="Servicio"><span class="lin l2">Dialogar</span>Articulación institucional</td><td data-l="Recibe">Compromisos de entidades identificados</td><td data-l="Indicador">Compromisos institucionales con responsable</td></tr>
@@ -695,54 +770,50 @@ details.anx[open] > summary::after{content:"−"}
       </tbody>
     </table>
     </div>
-    <p class="nota j" style="margin-top:1rem">Los indicadores miden lo que el consultor y la empresa controlan; ninguno promete que no habrá bloqueos. Las fichas de los siete servicios están en el anexo A2.</p>
-    <p class="consulta j"><b>Sobre la consulta previa.</b> La consulta previa es un derecho fundamental de los pueblos indígenas y las comunidades negras. El Estado la garantiza y el Ministerio del Interior dirige el proceso. Cuando un proyecto la requiere, el acompañamiento ayuda a la empresa a identificar sus obligaciones, prepararse, participar de buena fe y cumplir lo acordado, con apoyo jurídico especializado. No reemplaza a las autoridades ni la autonomía de los pueblos.</p>
+    <p class="nota j" style="margin-top:1rem">El acompañamiento reduce el riesgo de suspensiones y sobrecostos; no puede garantizar que no habrá bloqueos, porque dependen también de las comunidades y del Estado. Por eso los indicadores miden lo que el consultor y la empresa controlan. Las fichas de los siete servicios están en el anexo A2.</p>
   </div>
 </section>
 
-<section class="s" id="experiencia" aria-labelledby="h-exp">
+<section class="s" id="alcance" aria-labelledby="h-alcance">
   <div class="wrap">
     <div class="head">
-      <p class="eyebrow"><b>05</b> Experiencia</p>
-      <h2 id="h-exp">Ya lo he hecho: consulta previa, acuerdos de movilidad y seguimiento de compromisos</h2>
-      <p class="lead j">Son procesos colectivos: señalo lo que hice y lo que se logró con los equipos e instituciones. El caso más cercano a lo que necesita INGEVÍAS es la consulta previa con autoridades wayuu.</p>
+      <p class="eyebrow"><b>06</b> Alcance y límites</p>
+      <h2 id="h-alcance">Alcance, límites y posibles extensiones</h2>
     </div>
-    <div class="casos">
-      <article class="caso">
-  <header><div class="tags"><span class="label">La Guajira · Uribia y Manaure</span><span class="label">Consejería Presidencial para las Regiones · 2019–2020</span></div><h3>Consulta previa con autoridades wayuu para el plan de acción de la Sentencia T-302</h3></header>
-  <div class="cuerpo">
-    <div><p class="label">El problema</p><p class="tit">Una oferta del Estado repartida entre decenas de entidades, sin un solo interlocutor.</p><p class="j">La Corte Constitucional declaró un estado de cosas inconstitucional por la vulneración de derechos de la niñez wayuu y ordenó construir con sus autoridades un plan de acción. La oferta del Estado estaba dispersa entre entidades nacionales y territoriales.</p></div>
-    <div><p class="label">Mi responsabilidad y método</p><p class="tit">Delegado de la Consejería en la consulta: una sola oferta del Estado y mediación en la mesa.</p><p class="j">Consolidé la oferta de las entidades en una matriz y coordiné, como delegado, la participación del Gobierno en siete reuniones de consulta durante 16 días en terreno, del 2 al 17 de diciembre de 2019.</p></div>
-    <div class="res"><p class="label">Resultados documentados</p><p class="tit">Seis de siete jornadas con acuerdos protocolizados.</p><div class="chips"><span><b>7</b> jornadas</span><span><b>6</b> con acuerdos</span><span><b>964</b> acuerdos</span><span><b>68</b> de movilidad</span></div></div>
-  </div>
-  
-  <footer><b>Para INGEVÍAS</b><span class="j">Es la base de los protocolos para comunidades étnicas y del seguimiento de compromisos: preparar los espacios con autoridades tradicionales y convertir cada acuerdo en una matriz con responsables y fechas.</span></footer>
-</article>
+    <div class="resp resp3" style="margin-top:0">
+      <div><h3>Lo que aporta el consultor</h3><ul class="j"><li>Dirección del trabajo, relación con la empresa y responsabilidad por los entregables.</li><li>Diseño de instrumentos, trabajo de campo e informes.</li><li>Preparación y facilitación de espacios de diálogo.</li><li>Confidencialidad sobre la información de la empresa y de las comunidades.</li></ul></div>
+      <div><h3>Lo que se necesita de INGEVÍAS</h3><ul class="j"><li>Un interlocutor interno y acceso a los equipos de obra y social.</li><li>Contratos, plan de gestión social y compromisos vigentes de los proyectos priorizados.</li><li>Historial de suspensiones, sus causas y sus costos; registros de personal para el módulo de rotación.</li><li>Condiciones de seguridad y logística para las visitas.</li></ul></div>
+      <div><h3>Lo que no incluye</h3><ul class="j"><li>Adelantar la consulta previa: la dirige el Ministerio del Interior.</li><li>La representación jurídica de la empresa.</li><li>Ejecutar la gestión predial o ambiental del contrato.</li><li>La seguridad física del personal o de la maquinaria.</li><li>Pagos o entregas a comunidades o a intermediarios.</li><li>Las obligaciones del equipo social que exige cada contrato.</li></ul></div>
     </div>
-    <div class="tabla-wrap" style="margin-top:1.6rem">
-    <table class="valor-tabla exp-tabla">
-      <caption class="sr">Otras experiencias</caption>
-      <thead><tr><th scope="col">Otras experiencias</th><th scope="col">Qué hice</th><th scope="col">Qué aporta a INGEVÍAS</th></tr></thead>
-      <tbody>
-        <tr><td data-l="Experiencia"><b>Jurisdicción Especial para la Paz</b><span class="sub">2021–2026 · presencia en los 32 departamentos</span></td><td data-l="Qué hice">Diseñé y coordiné el sistema de planeación y seguimiento del despliegue territorial; apoyé la preparación de espacios restaurativos entre víctimas y comparecientes.</td><td data-l="Aporta">Seguimiento de compromisos e informes para la junta; preparación de los encuentros más difíciles.</td></tr>
-        <tr><td data-l="Experiencia"><b>Misión de Apoyo al Proceso de Paz de la OEA</b><span class="sub">2017 · movilizaciones y bloqueos de vías</span></td><td data-l="Qué hice">Coautor del informe sobre las movilizaciones de 2017: matriz nacional de pliegos, actores y compromisos.</td><td data-l="Aporta">Diagnóstico socioterritorial y señales tempranas de bloqueo.</td></tr>
-        <tr><td data-l="Experiencia"><b>Centro Internacional de Toledo para la Paz</b><span class="sub">2017–2018 · seis departamentos</span></td><td data-l="Qué hice">Preparé y facilité mesas entre víctimas y entidades públicas, con actas y recomendaciones de política.</td><td data-l="Aporta">Facilitación de diálogo y articulación institucional.</td></tr>
-      </tbody>
-    </table>
+    <div class="equipo">
+      <div style="display:grid;gap:.5rem"><h3>Cómo puede crecer el trabajo</h3><p class="j">El método se puede extender a otros proyectos y regiones de la empresa, empezando por los que tengan conflictos activos. Jorge Gil dirige el trabajo y responde por los entregables. Si el alcance requiere un perfil adicional, lo propone con nombre y hoja de vida para aprobación de la empresa.</p></div>
+      <ul>
+        <li><b>Abogado o abogada con experiencia en consulta previa</b>Para proyectos con pueblos indígenas y comunidades negras.</li>
+        <li><b>Antropología y trabajo social</b>Para el trabajo de campo, la caracterización y el estudio de personal local.</li>
+        <li><b>Gestión ambiental y predial</b>Cuando el conflicto nace de impactos ambientales o de la compra de predios.</li>
+      </ul>
     </div>
-    <p class="nota" style="margin-top:.8rem">Los cuatro casos completos están en el anexo A1.</p>
+    <p class="label" style="margin:1.8rem 0 .7rem">Principios de trabajo</p>
+    <div class="principios">
+      <div><b>Derechos y debida diligencia</b><span>Según los Principios Rectores de las Naciones Unidas sobre las empresas y los derechos humanos.</span></div>
+      <div><b>Consulta previa como derecho</b><span>Se prepara con rigor y con apoyo jurídico, y se cumple lo protocolizado.</span></div>
+      <div><b>Acuerdos verificables</b><span>Solo se pacta lo que se puede cumplir, con responsables y fechas.</span></div>
+      <div><b>Respeto por la organización propia</b><span>Se trabaja con las autoridades y formas de decisión de cada comunidad, sin fragmentarlas.</span></div>
+      <div><b>Acción sin daño y seguridad</b><span>Análisis de contexto antes de cada visita; el trabajo no expone a liderazgos ni a comunidades y protege la información sensible.</span></div>
+      <div><b>Transparencia</b><span>Información clara para la comunidad y para la junta, sin intermediarios ni pagos por fuera de los acuerdos.</span></div>
+    </div>
   </div>
 </section>
 
 <section class="s" id="ruta" aria-labelledby="h-ruta">
   <div class="wrap">
     <div class="head">
-      <p class="eyebrow"><b>06</b> Cómo empezar</p>
+      <p class="eyebrow"><b>07</b> Cómo empezar</p>
       <h2 id="h-ruta">Empezar en el Cauca con un diagnóstico de seis semanas</h2>
       <p class="lead j">El Cauca tiene el contrato de mayor plazo registrado y concentra riesgos documentados en obras viales: en el corredor del Macizo, otro consorcio retiró su maquinaria en 2024 tras la quema de equipos, según la prensa regional, y a marzo de 2019 la doble calzada Popayán–Santander de Quilichao llevaba más de tres años y medio detenida.</p>
     </div>
     <div class="opciones">
-      <div class="opcion a"><span class="tag">Opción A · Entrada · Recomendada</span><span class="plazo">6 semanas</span><h3>Diagnóstico de un proyecto</h3><ul class="j"><li>Diagnóstico socioterritorial del Anillo del Macizo o del proyecto que la empresa priorice.</li><li>Informe a la junta con riesgos y recomendaciones.</li><li>Con ese informe, la junta decide si continúa con la opción B.</li></ul></div>
+      <div class="opcion a"><span class="tag">Opción A · Entrada · Recomendada</span><span class="plazo">6 semanas</span><h3>Diagnóstico de un proyecto</h3><ul class="j"><li>Diagnóstico socioterritorial del Anillo del Macizo o del proyecto que la empresa priorice.</li><li>Costo estimado de las suspensiones, con datos de la empresa.</li><li>Informe a la junta con riesgos y recomendaciones, para decidir si continúa con la opción B.</li></ul></div>
       <div class="opcion b"><span class="tag">Opción B · Piloto Cauca</span><span class="plazo">16 semanas</span><h3>Diagnóstico, estrategia y seguimiento</h3><ul class="j"><li>Diagnóstico de dos proyectos (semanas 1 a 8).</li><li>Estrategia de diálogo y montaje del seguimiento de compromisos (semanas 9 a 16).</li><li>Asesoría a la junta desde la semana 5.</li><li>Conviene si un proyecto ya está en crisis.</li></ul></div>
       <div class="opcion"><span class="tag">Módulo adicional</span><span class="plazo">10 a 16 semanas</span><h3>Estudio del personal local</h3><ul class="j"><li>Causas de la salida del personal contratado en cada zona y plan de retención.</li><li>10 a 12 semanas con equipo de campo, o 14 a 16 si el campo lo hace solo el consultor.</li><li>Método en el anexo A3.</li></ul></div>
     </div>
@@ -762,33 +833,37 @@ details.anx[open] > summary::after{content:"−"}
   </div>
 </section>
 
-<section class="s" id="trabajo" aria-labelledby="h-trab">
+<section class="s" id="experiencia" aria-labelledby="h-exp">
   <div class="wrap">
     <div class="head">
-      <p class="eyebrow"><b>07</b> Cómo trabajamos</p>
-      <h2 id="h-trab">Reglas claras y responsabilidades compartidas</h2>
+      <p class="eyebrow"><b>08</b> Experiencia</p>
+      <h2 id="h-exp">Experiencia en consulta previa, acuerdos de movilidad y seguimiento de compromisos</h2>
+      <p class="lead j">Son procesos colectivos: se indica lo que hizo Jorge Gil y lo que se logró con los equipos e instituciones. El caso más cercano a lo que necesita INGEVÍAS es la consulta previa con autoridades wayuu.</p>
     </div>
-    <div class="principios">
-      <div><b>Derechos y debida diligencia</b><span>Según los Principios Rectores de las Naciones Unidas sobre las empresas y los derechos humanos.</span></div>
-      <div><b>Consulta previa como derecho</b><span>Se prepara con rigor y con apoyo jurídico, y se cumple lo protocolizado.</span></div>
-      <div><b>Acuerdos verificables</b><span>Solo se pacta lo que se puede cumplir, con responsables y fechas.</span></div>
-      <div><b>Respeto por la organización propia</b><span>Se trabaja con las autoridades y formas de decisión de cada comunidad, sin fragmentarlas.</span></div>
-      <div><b>Acción sin daño y seguridad</b><span>Análisis de contexto antes de cada visita; el trabajo no expone a liderazgos ni a comunidades y protege la información sensible.</span></div>
-      <div><b>Transparencia</b><span>Información clara para la comunidad y para la junta, sin intermediarios ni pagos por fuera de los acuerdos.</span></div>
+    <div class="casos">
+      <article class="caso">
+  <header><div class="tags"><span class="label">La Guajira · Uribia y Manaure</span><span class="label">Consejería Presidencial para las Regiones · 2019–2020</span></div><h3>Consulta previa con autoridades wayuu para el plan de acción de la Sentencia T-302 de 2017</h3></header>
+  <div class="cuerpo">
+    <div><p class="label">El problema</p><p class="tit">Una oferta del Estado repartida entre decenas de entidades, sin un solo interlocutor.</p><p class="j">La Corte Constitucional declaró un estado de cosas inconstitucional por la vulneración de derechos de la niñez wayuu y ordenó construir con sus autoridades un plan de acción. La oferta del Estado estaba dispersa entre entidades nacionales y territoriales.</p></div>
+    <div><p class="label">Responsabilidad y método</p><p class="tit">Delegado de la Consejería en la consulta: una sola oferta del Estado y mediación en la mesa.</p><p class="j">Jorge Gil consolidó la oferta de las entidades en una matriz y coordinó, como delegado, la participación del Gobierno en siete reuniones de consulta durante 16 días en terreno, del 2 al 17 de diciembre de 2019.</p></div>
+    <div class="res"><p class="label">Resultados documentados</p><p class="tit">Seis de siete jornadas con acuerdos protocolizados.</p><div class="chips"><span><b>7</b> jornadas</span><span><b>6</b> jornadas con acuerdos</span><span><b>964</b> acuerdos en total</span><span><b>68</b> sobre movilidad</span></div></div>
+  </div>
+  
+  <footer><b>Para INGEVÍAS</b><span class="j">Es la base de los protocolos para comunidades étnicas y del seguimiento de compromisos: preparar los espacios con autoridades tradicionales y convertir cada acuerdo en una matriz con responsables y fechas.</span></footer>
+</article>
     </div>
-    <div class="resp resp3">
-      <div><h3>Lo que aporta el consultor</h3><ul class="j"><li>Dirección del trabajo, relación con la empresa y responsabilidad por los entregables.</li><li>Diseño de instrumentos, trabajo de campo e informes.</li><li>Preparación y facilitación de espacios de diálogo.</li><li>Confidencialidad sobre la información de la empresa y de las comunidades.</li></ul></div>
-      <div><h3>Lo que se necesita de INGEVÍAS</h3><ul class="j"><li>Un interlocutor interno y acceso a los equipos de obra y social.</li><li>Contratos, plan de gestión social y compromisos vigentes de los proyectos priorizados.</li><li>Historial de suspensiones y sus causas; registros de personal para el módulo de rotación.</li><li>Condiciones de seguridad y logística para las visitas.</li></ul></div>
-      <div><h3>Lo que no incluye</h3><ul class="j"><li>Adelantar la consulta previa: la dirige el Ministerio del Interior.</li><li>La representación jurídica de la empresa.</li><li>Ejecutar la gestión predial o ambiental del contrato.</li><li>La seguridad física del personal o de la maquinaria.</li><li>Pagos o entregas a comunidades o a intermediarios.</li><li>Las obligaciones del equipo social que exige cada contrato.</li></ul></div>
+    <div class="tabla-wrap" style="margin-top:1.6rem">
+    <table class="valor-tabla exp-tabla">
+      <caption class="sr">Otras experiencias</caption>
+      <thead><tr><th scope="col">Otras experiencias</th><th scope="col">Qué hizo</th><th scope="col">Qué aporta a INGEVÍAS</th></tr></thead>
+      <tbody>
+        <tr><td data-l="Experiencia"><b>Jurisdicción Especial para la Paz</b><span class="sub">2021–2026 · presencia en los 32 departamentos</span></td><td data-l="Qué hizo">Diseñó y coordinó el sistema de planeación y seguimiento del despliegue territorial; apoyó la preparación de espacios restaurativos entre víctimas y comparecientes.</td><td data-l="Aporta">Seguimiento de compromisos e informes para la junta; preparación de los encuentros más difíciles.</td></tr>
+        <tr><td data-l="Experiencia"><b>Misión de Apoyo al Proceso de Paz de la OEA</b><span class="sub">2017 · movilizaciones y bloqueos de vías</span></td><td data-l="Qué hizo">Coautor del informe sobre las movilizaciones de 2017: matriz nacional de pliegos, actores y compromisos.</td><td data-l="Aporta">Diagnóstico socioterritorial y señales tempranas de bloqueo.</td></tr>
+        <tr><td data-l="Experiencia"><b>Centro Internacional de Toledo para la Paz</b><span class="sub">2017–2018 · seis departamentos</span></td><td data-l="Qué hizo">Preparó y facilitó mesas entre víctimas y entidades públicas, con actas y recomendaciones de política.</td><td data-l="Aporta">Facilitación de diálogo y articulación institucional.</td></tr>
+      </tbody>
+    </table>
     </div>
-    <div class="equipo">
-      <div style="display:grid;gap:.5rem"><h3>Un equipo que crece según el alcance</h3><p class="j">Dirijo el trabajo y respondo por los entregables. Si el alcance requiere un perfil adicional, lo propongo con nombre y hoja de vida para aprobación de la empresa.</p></div>
-      <ul>
-        <li><b>Abogado o abogada con experiencia en consulta previa</b>Para proyectos con pueblos indígenas y comunidades negras.</li>
-        <li><b>Antropología y trabajo social</b>Para el trabajo de campo, la caracterización y el estudio de personal local.</li>
-        <li><b>Gestión ambiental y predial</b>Cuando el conflicto nace de impactos ambientales o de la compra de predios.</li>
-      </ul>
-    </div>
+    <p class="nota" style="margin-top:.8rem">Los cuatro casos completos están en el anexo A1.</p>
   </div>
 </section>
 
@@ -797,9 +872,9 @@ details.anx[open] > summary::after{content:"−"}
 <footer class="cierre" id="perfil" aria-labelledby="h-perfil">
   <div class="wrap">
     <div>
-      <p class="eyebrow">08 · Perfil</p>
+      <p class="eyebrow">09 · Perfil</p>
       <h2 id="h-perfil">Jorge Enrique Gil Cepeda</h2>
-      <p class="j">Politólogo con cerca de diez años de trabajo en construcción de paz, relación con comunidades étnicas y víctimas, y articulación de entidades públicas en La Guajira, el Pacífico y el Cauca. Fue delegado de la Consejería Presidencial para las Regiones en la consulta previa con autoridades wayuu en Uribia y Manaure (diciembre de 2019), dentro del plan de acción de la Sentencia T-302. Ha trabajado con la Presidencia de la República, la Jurisdicción Especial para la Paz, la Unidad para las Víctimas, la MAPP/OEA, el CITpax y FUPAD. Con FUPAD vivió en Tumaco en 2019 y acompañó, con talleres y grupos focales, a consejos comunitarios y organizaciones afrocolombianas de la costa pacífica nariñense en la elaboración de informes para la JEP sobre el caso 02, por los graves crímenes cometidos en los municipios de Tumaco, Ricaurte y Barbacoas.</p>
+      <p class="j">Politólogo con cerca de diez años de trabajo en construcción de paz, relación con comunidades étnicas y víctimas, y articulación de entidades públicas en La Guajira, el Pacífico y el Cauca. Fue delegado de la Consejería Presidencial para las Regiones en la consulta previa con autoridades wayuu en Uribia y Manaure (diciembre de 2019), dentro del plan de acción de la Sentencia T-302 de 2017. Ha trabajado con la Presidencia de la República, la Jurisdicción Especial para la Paz, la Unidad para las Víctimas, la MAPP/OEA, el CITpax y FUPAD. Con FUPAD vivió en Tumaco en 2019 y acompañó, con talleres y grupos focales, a consejos comunitarios y organizaciones afrocolombianas de la costa pacífica nariñense en la elaboración de informes para la JEP sobre el caso 02, por los graves crímenes cometidos en los municipios de Tumaco, Ricaurte y Barbacoas.</p>
       <div class="form"><span>Ciencia Política y Relaciones Internacionales · Pontificia Universidad Javeriana</span><span>Especialización en Mercados y Políticas del Suelo en América Latina · Universidad Nacional de Colombia</span><span>Maestría en Periodismo · Universidad de los Andes</span></div>
     </div>
     <div class="contacto">
@@ -818,48 +893,48 @@ details.anx[open] > summary::after{content:"−"}
   <div class="wrap">
     <details class="anx" id="a1"><summary><span>A1</span>Los cuatro casos completos</summary>
       <div class="anx-c"><div class="casos"><article class="caso">
-  <header><div class="tags"><span class="label">La Guajira · Uribia y Manaure</span><span class="label">Consejería Presidencial para las Regiones · 2019–2020</span></div><h3>Consulta previa con autoridades wayuu para el plan de acción de la Sentencia T-302</h3></header>
+  <header><div class="tags"><span class="label">La Guajira · Uribia y Manaure</span><span class="label">Consejería Presidencial para las Regiones · 2019–2020</span></div><h3>Consulta previa con autoridades wayuu para el plan de acción de la Sentencia T-302 de 2017</h3></header>
   <div class="cuerpo">
     <div><p class="label">El problema</p><p class="tit">Una oferta del Estado repartida entre decenas de entidades, sin un solo interlocutor.</p><p class="j">La Corte Constitucional declaró un estado de cosas inconstitucional por la vulneración de derechos de la niñez wayuu y ordenó construir con sus autoridades un plan de acción. La oferta del Estado estaba dispersa entre entidades nacionales y territoriales.</p></div>
-    <div><p class="label">Mi responsabilidad y método</p><p class="tit">Delegado de la Consejería en la consulta: una sola oferta del Estado y mediación en la mesa.</p><p class="j">Consolidé la oferta de las entidades en una matriz y coordiné, como delegado, la participación del Gobierno en siete reuniones de consulta durante 16 días en terreno, del 2 al 17 de diciembre de 2019.</p></div>
-    <div class="res"><p class="label">Resultados documentados</p><p class="tit">Seis de siete jornadas con acuerdos protocolizados.</p><div class="chips"><span><b>7</b> jornadas</span><span><b>6</b> con acuerdos</span><span><b>964</b> acuerdos</span><span><b>68</b> de movilidad</span></div></div>
+    <div><p class="label">Responsabilidad y método</p><p class="tit">Delegado de la Consejería en la consulta: una sola oferta del Estado y mediación en la mesa.</p><p class="j">Jorge Gil consolidó la oferta de las entidades en una matriz y coordinó, como delegado, la participación del Gobierno en siete reuniones de consulta durante 16 días en terreno, del 2 al 17 de diciembre de 2019.</p></div>
+    <div class="res"><p class="label">Resultados documentados</p><p class="tit">Seis de siete jornadas con acuerdos protocolizados.</p><div class="chips"><span><b>7</b> jornadas</span><span><b>6</b> jornadas con acuerdos</span><span><b>964</b> acuerdos en total</span><span><b>68</b> sobre movilidad</span></div></div>
   </div>
-  <div class="det abierto"><div><p class="label" style="margin-bottom:.4rem">Qué hice</p><ul class="j"><li>Consolidé la oferta de las entidades en una sola matriz y acompañé a la Gobernación y a las alcaldías de Riohacha, Maicao, Uribia y Manaure en la construcción de su oferta e indicadores.</li><li>Fui delegado de la Consejería para las Regiones en la consulta previa en Uribia y Manaure. Según la metodología de la consulta, cada reunión tenía dos días de trabajo (mesas temáticas, conclusiones y protocolización), con jornadas de desplazamiento entre comunidades.</li><li>Cuando una entidad y las autoridades no llegaban a acuerdo, mediaba en la mesa y escalaba el tema a los niveles directivos de la entidad para revisar la oferta.</li><li>En Nazareth las autoridades pidieron revisar toda la oferta y la jornada no se realizó. Participé en el acuerdo para revisarla y fijar una nueva fecha; el proceso siguió en las demás comunidades.</li><li>En 2020 y 2021, desde la Unidad Nacional para la Gestión del Riesgo de Desastres, apoyé la preparación de la segunda fase y el sistema de indicadores que se reporta al Tribunal de Riohacha.</li></ul></div><div><p class="label" style="margin-bottom:.4rem">Qué se logró</p><ul class="j"><li>Seis de las siete jornadas cerraron con acuerdos protocolizados; tres con todas las mesas firmadas.</li><li>Se protocolizaron acuerdos con la Fundación Shipia Wayuu, que había instalado una mesa propia en Uribia.</li><li>Mesas de transporte con el Ministerio de Transporte dentro de la consulta: 68 de los 964 acuerdos fueron sobre movilidad y vías.</li><li>Participé con el equipo de la Consejería en la elaboración del Decreto 100 de 2020, que creó la Comisión Intersectorial para La Guajira, la instancia que coordina las acciones del Gobierno para superar el estado de cosas inconstitucional.</li></ul><p class="j" style="margin-top:.6rem"><b>Después.</b> En 2024, el Decreto 147 creó el Mecanismo Especial de Seguimiento y Evaluación de las Políticas Públicas, modificado en 2025 por el Decreto 1290, con un comité técnico de movilidad coordinado por el Ministerio de Transporte. La Corte Constitucional mantiene el seguimiento a la sentencia. En SECOP figuran nueve contratos del Instituto Nacional de Vías para vías de comunidades wayuu, por cerca de $2,76 billones, cuyo objeto cita la Sentencia T-302.</p></div></div>
+  <div class="det abierto"><div><p class="label" style="margin-bottom:.4rem">Qué hizo</p><ul class="j"><li>Consolidó la oferta de las entidades en una sola matriz y acompañó a la Gobernación y a las alcaldías de Riohacha, Maicao, Uribia y Manaure en la construcción de su oferta e indicadores.</li><li>Fue delegado de la Consejería para las Regiones en la consulta previa en Uribia y Manaure. Según la metodología de la consulta, cada reunión tenía dos días de trabajo (mesas temáticas, conclusiones y protocolización), con jornadas de desplazamiento entre comunidades.</li><li>Cuando una entidad y las autoridades no llegaban a acuerdo, mediaba en la mesa y escalaba el tema a los niveles directivos de la entidad para revisar la oferta.</li><li>En Nazareth las autoridades pidieron revisar toda la oferta y la jornada no se realizó. Participó en el acuerdo para revisarla y fijar una nueva fecha; el proceso siguió en las demás comunidades.</li><li>En 2020 y 2021, desde la Unidad Nacional para la Gestión del Riesgo de Desastres, apoyó la preparación de la segunda fase y el sistema de indicadores que se reporta al Tribunal de Riohacha.</li></ul></div><div><p class="label" style="margin-bottom:.4rem">Qué se logró</p><ul class="j"><li>Seis de las siete jornadas cerraron con acuerdos protocolizados; tres con todas las mesas firmadas.</li><li>Se protocolizaron acuerdos con la Fundación Shipia Wayuu, que había instalado una mesa propia en Uribia.</li><li>Mesas de transporte con el Ministerio de Transporte dentro de la consulta: 68 de los 964 acuerdos fueron sobre movilidad y vías.</li><li>Participó con el equipo de la Consejería en la elaboración del Decreto 100 de 2020, que creó la Comisión Intersectorial para La Guajira, la instancia que coordina las acciones del Gobierno para superar el estado de cosas inconstitucional.</li></ul><p class="j" style="margin-top:.6rem"><b>Después.</b> En 2024, el Decreto 147 creó el Mecanismo Especial de Seguimiento y Evaluación de las Políticas Públicas, modificado en 2025 por el Decreto 1290, con un comité técnico de movilidad coordinado por el Ministerio de Transporte. La Corte Constitucional mantiene el seguimiento a la sentencia. En SECOP figuran nueve contratos del Instituto Nacional de Vías para vías de comunidades wayuu, por cerca de $2,76 billones, cuyo objeto cita la Sentencia T-302 de 2017.</p></div></div>
   
 </article>
 <article class="caso">
   <header><div class="tags"><span class="label">Pacífico, Catatumbo y otras regiones</span><span class="label">Misión de Apoyo al Proceso de Paz de la OEA · 2017</span></div><h3>Movilizaciones sociales y bloqueos de vías de 2017</h3></header>
   <div class="cuerpo">
     <div><p class="label">El problema</p><p class="tit">Bloqueos de vías en varias regiones, negociados región por región.</p><p class="j">En octubre y noviembre de 2017 la Minga Indígena y otros movimientos bloquearon vías en varias regiones, entre ellas Quibdó–Pereira y Buenaventura–Cali. Las negociaciones avanzaban región por región.</p></div>
-    <div><p class="label">Mi responsabilidad y método</p><p class="tit">Una matriz nacional de pliegos, actores y compromisos, con mapas regionales.</p><p class="j">Sistematizamos con el equipo de la Misión las acciones, organizaciones, pliegos y compromisos firmados en cada región.</p></div>
+    <div><p class="label">Responsabilidad y método</p><p class="tit">Una matriz nacional de pliegos, actores y compromisos, con mapas regionales.</p><p class="j">Jorge Gil sistematizó con el equipo de la Misión las acciones, organizaciones, pliegos y compromisos firmados en cada región.</p></div>
     <div class="res"><p class="label">Resultados documentados</p><p class="tit">Varios pliegos exigían cumplir acuerdos firmados antes.</p><div class="chips"><span>Informe de las movilizaciones</span><span>Matriz nacional</span><span>Mapas regionales</span></div></div>
   </div>
-  <div class="det abierto"><div><p class="label" style="margin-bottom:.4rem">Qué hice</p><ul class="j"><li>Sistematizamos acciones, organizaciones, pliegos y compromisos firmados en cada región, en una matriz nacional y en mapas regionales.</li><li>Analizamos cómo se estructuraban las mesas de negociación y la capacidad del Gobierno para cumplir lo pactado.</li></ul></div><div><p class="label" style="margin-bottom:.4rem">Qué se logró</p><ul class="j"><li>Coautor del informe sobre las movilizaciones de octubre y noviembre de 2017.</li><li>El informe documentó que varios pliegos exigían cumplir acuerdos firmados en años anteriores.</li></ul></div></div>
+  <div class="det abierto"><div><p class="label" style="margin-bottom:.4rem">Qué hizo</p><ul class="j"><li>Sistematizó con el equipo acciones, organizaciones, pliegos y compromisos firmados en cada región, en una matriz nacional y en mapas regionales.</li><li>Analizó con el equipo cómo se estructuraban las mesas de negociación y la capacidad del Gobierno para cumplir lo pactado.</li></ul></div><div><p class="label" style="margin-bottom:.4rem">Qué se logró</p><ul class="j"><li>Coautor del informe sobre las movilizaciones de octubre y noviembre de 2017.</li><li>El informe documentó que varios pliegos exigían cumplir acuerdos firmados en años anteriores.</li></ul></div></div>
   
 </article>
 <article class="caso">
   <header><div class="tags"><span class="label">Atlántico, Bolívar, Sucre, Magdalena, Valle del Cauca y Cauca</span><span class="label">Centro Internacional de Toledo para la Paz · 2017–2018</span></div><h3>Mesas de trabajo entre víctimas y entidades públicas en seis departamentos</h3></header>
   <div class="cuerpo">
     <div><p class="label">El problema</p><p class="tit">Víctimas que reclamaban tierras y entidades sin canales para trabajar juntas.</p><p class="j">Organizaciones de víctimas que reclamaban tierras y entidades como las gobernaciones y la Agencia de Desarrollo Rural no tenían espacios para trabajar juntas.</p></div>
-    <div><p class="label">Mi responsabilidad y método</p><p class="tit">Mesas preparadas con temas que cada entidad podía asumir.</p><p class="j">Revisé los planes de desarrollo de cada departamento antes de convocar, preparé y facilité las mesas y elaboré sus actas.</p></div>
+    <div><p class="label">Responsabilidad y método</p><p class="tit">Mesas preparadas con temas que cada entidad podía asumir.</p><p class="j">Jorge Gil revisó los planes de desarrollo de cada departamento antes de convocar, preparó y facilitó las mesas y elaboró sus actas.</p></div>
     <div class="res"><p class="label">Resultados documentados</p><p class="tit">Entidades y organizaciones en la misma mesa.</p><div class="chips"><span><b>6</b> departamentos</span><span>Actas</span><span>Recomendaciones de política</span></div></div>
   </div>
-  <div class="det abierto"><div><p class="label" style="margin-bottom:.4rem">Qué hice</p><ul class="j"><li>Analicé los planes de desarrollo de cada departamento para llegar con temas que las entidades podían asumir.</li><li>Preparé y facilité mesas en Atlántico, Bolívar, Sucre, Magdalena, Valle del Cauca y Cauca, y elaboré sus actas.</li></ul></div><div><p class="label" style="margin-bottom:.4rem">Qué se logró</p><ul class="j"><li>Reuniones de cierre con las gobernaciones de Sucre, Bolívar y Valle, la Agencia de Desarrollo Rural y organizaciones, entre ellas el Consejo Comunitario de Bajo Calima.</li><li>Documento de recomendaciones de política territorial.</li></ul></div></div>
+  <div class="det abierto"><div><p class="label" style="margin-bottom:.4rem">Qué hizo</p><ul class="j"><li>Analizó los planes de desarrollo de cada departamento para llegar con temas que las entidades podían asumir.</li><li>Preparó y facilitó mesas en Atlántico, Bolívar, Sucre, Magdalena, Valle del Cauca y Cauca, y elaboró sus actas.</li></ul></div><div><p class="label" style="margin-bottom:.4rem">Qué se logró</p><ul class="j"><li>Reuniones de cierre con las gobernaciones de Sucre, Bolívar y Valle, la Agencia de Desarrollo Rural y organizaciones, entre ellas el Consejo Comunitario de Bajo Calima.</li><li>Documento de recomendaciones de política territorial.</li></ul></div></div>
   
 </article>
 <article class="caso">
   <header><div class="tags"><span class="label">Presencia en los 32 departamentos</span><span class="label">Jurisdicción Especial para la Paz · 2021–2026</span></div><h3>Seguimiento territorial y espacios restaurativos en una institución nacional</h3></header>
   <div class="cuerpo">
     <div><p class="label">El problema</p><p class="tit">Una institución nueva en todo el país, sin información territorial consolidada.</p><p class="j">Una institución nueva, presente en todo el país y en zonas con conflicto activo, necesitaba saber qué se hacía en cada territorio y preparar encuentros difíciles entre víctimas y comparecientes.</p></div>
-    <div><p class="label">Mi responsabilidad y método</p><p class="tit">Planeación y seguimiento del despliegue territorial, y apoyo a los espacios restaurativos.</p><p class="j">Diseñé y coordiné el sistema de planeación y seguimiento del despliegue territorial y articulé áreas técnicas y despachos judiciales.</p></div>
+    <div><p class="label">Responsabilidad y método</p><p class="tit">Planeación y seguimiento del despliegue territorial, y apoyo a los espacios restaurativos.</p><p class="j">Jorge Gil diseñó y coordinó el sistema de planeación y seguimiento del despliegue territorial y articuló áreas técnicas y despachos judiciales.</p></div>
     <div class="res"><p class="label">Resultados documentados</p><p class="tit">Información periódica para decidir y apoyo de las entidades territoriales.</p><div class="chips"><span>Sistema de seguimiento</span><span>Alcaldías y gobernaciones</span><span>Planes de desarrollo</span></div></div>
   </div>
-  <div class="det abierto"><div><p class="label" style="margin-bottom:.4rem">Qué hice</p><ul class="j"><li>Diseñé y coordiné el sistema de planeación y seguimiento del despliegue territorial.</li><li>Lideré el diseño de un instrumento de valoración con indicadores ponderados y umbrales de decisión, en proceso de adopción.</li><li>Contribuí a preparar espacios restaurativos y de mediación entre víctimas y comparecientes, y aporté a sus metodologías: preparación por separado de cada parte, acción sin daño y seguimiento de lo acordado.</li><li>Articulé el trabajo entre áreas técnicas y despachos judiciales, con audiencias y diligencias en territorio y protocolos de seguridad para el trabajo de campo.</li></ul></div><div><p class="label" style="margin-bottom:.4rem">Qué se logró</p><ul class="j"><li>Información periódica para decisiones institucionales y rendición de cuentas.</li><li>Gestión de apoyos de alcaldías y gobernaciones, como espacios y logística, para el trabajo territorial de la Jurisdicción.</li><li>Con el relacionamiento con alcaldías y gobernaciones y documentos de política, contribuí a que se incluyeran medidas de reparación y restauración para víctimas que participan en la Jurisdicción en planes de desarrollo territoriales.</li></ul></div></div>
+  <div class="det abierto"><div><p class="label" style="margin-bottom:.4rem">Qué hizo</p><ul class="j"><li>Diseñó y coordinó el sistema de planeación y seguimiento del despliegue territorial.</li><li>Lideró el diseño de un instrumento de valoración con indicadores ponderados y umbrales de decisión, en proceso de adopción.</li><li>Contribuyó a preparar espacios restaurativos y de mediación entre víctimas y comparecientes, y aportó a sus metodologías: preparación por separado de cada parte, acción sin daño y seguimiento de lo acordado.</li><li>Articuló el trabajo entre áreas técnicas y despachos judiciales, con audiencias y diligencias en territorio y protocolos de seguridad para el trabajo de campo.</li></ul></div><div><p class="label" style="margin-bottom:.4rem">Qué se logró</p><ul class="j"><li>Información periódica para decisiones institucionales y rendición de cuentas.</li><li>Gestión de apoyos de alcaldías y gobernaciones, como espacios y logística, para el trabajo territorial de la Jurisdicción.</li><li>Con el relacionamiento con alcaldías y gobernaciones y documentos de política, contribuyó a que se incluyeran medidas de reparación y restauración para víctimas que participan en la Jurisdicción en planes de desarrollo territoriales.</li></ul></div></div>
   
 </article></div></div>
     </details>
     <details class="anx" id="a2"><summary><span>A2</span>Las fichas de los siete servicios</summary>
-      <div class="anx-c"><div class="ciclo"><div class="linea"><div class="verbo"><i>1</i><h3>Entender</h3></div><p class="intro">Saber con quién hablar y qué conflictos pueden escalar.</p><div class="mod"><h4>Diagnóstico socioterritorial</h4><dl><dt>Problema</dt><dd>No se sabe con quién hablar ni qué conflicto puede detener la obra.</dd><dt>Incluye</dt><dd>Actores y liderazgos; historia de conflictos y compromisos previos, incluidos los del Estado; riesgos sociales y de seguridad; señales tempranas.</dd><dt>Recibe la empresa</dt><dd>Mapa de actores y de conflictividad e informe de riesgos priorizados.</dd></dl><span class="cuando">Antes de iniciar o con la obra en curso</span></div><div class="mod"><h4>Estudio del personal local</h4><dl><dt>Problema</dt><dd>Se va el personal contratado en la zona y no se sabe por qué.</dd><dt>Incluye</dt><dd>Registros de personal, entrevistas y grupos focales.</dd><dt>Recibe la empresa</dt><dd>Tablero, causas por territorio y plan de retención.</dd></dl><span class="cuando">En cualquier momento · ver anexo A3</span></div></div><div class="linea"><div class="verbo"><i>2</i><h3>Dialogar</h3></div><p class="intro">Que cada espacio de diálogo esté preparado, con agenda, información y responsables claros.</p><div class="mod"><h4>Estrategia y facilitación de diálogo</h4><dl><dt>Problema</dt><dd>Reuniones que terminan en nuevas tensiones.</dd><dt>Incluye</dt><dd>Hoja de ruta por proyecto; preparación de cada parte por separado; mediación, moderación y actas; protocolos para comunidades campesinas, indígenas y negras.</dd><dt>Recibe la empresa</dt><dd>Espacios preparados y documentados.</dd></dl><span class="cuando">Durante la obra</span></div><div class="mod"><h4>Articulación institucional</h4><dl><dt>Problema</dt><dd>Reclamos que dependen del Estado y que la empresa sola no puede resolver.</dd><dt>Incluye</dt><dd>Interlocución con alcaldías, gobernaciones, entidades nacionales y el Ministerio del Interior; Defensoría y Procuraduría como garantes.</dd><dt>Recibe la empresa</dt><dd>Compromisos institucionales identificados, con responsable.</dd></dl><span class="cuando">Cuando el reclamo supera a la obra</span></div></div><div class="linea"><div class="verbo"><i>3</i><h3>Cumplir</h3></div><p class="intro">Detectar a tiempo los compromisos en riesgo de incumplirse y actuar antes de que escalen.</p><div class="mod"><h4>Seguimiento de compromisos</h4><dl><dt>Problema</dt><dd>Acuerdos sin responsable ni fecha.</dd><dt>Incluye</dt><dd>Matriz de compromisos; tablero con días de obra perdidos y alertas; indicadores de la calidad del diálogo; rendición de cuentas a la comunidad.</dd><dt>Recibe la empresa</dt><dd>Tablero actualizado e informes periódicos.</dd></dl><span class="cuando">Después de cada acuerdo</span></div></div><div class="linea"><div class="verbo"><i>4</i><h3>Decidir y construir capacidad</h3></div><p class="intro">Decidir con información del territorio y dejar procedimientos propios.</p><div class="mod"><h4>Asesoría a junta y gerencia</h4><dl><dt>Problema</dt><dd>Decisiones tomadas solo con el cronograma de obra.</dd><dt>Incluye</dt><dd>Informes ejecutivos de riesgo social; formación de residentes y equipos sociales; acompañamiento en momentos de crisis.</dd><dt>Recibe la empresa</dt><dd>Informes y sesiones de trabajo con la junta.</dd></dl><span class="cuando">Continua</span></div><div class="mod"><h4>Procedimientos para el diálogo social</h4><dl><dt>Problema</dt><dd>Cada proyecto empieza de cero.</dd><dt>Incluye</dt><dd>Política de relacionamiento; roles y equipo social mínimo; protocolos; mecanismo de quejas con plazos; ruta de escalamiento ante bloqueos o amenazas; uso de las instancias públicas de diálogo social vigentes.</dd><dt>Recibe la empresa</dt><dd>Procedimientos aprobados por la junta.</dd></dl><span class="cuando">Para proyectos actuales y futuros</span></div></div></div></div>
+      <div class="anx-c"><div class="ciclo"><div class="linea"><div class="verbo"><i>1</i><h3>Entender</h3></div><p class="intro">Saber con quién hablar y qué conflictos pueden escalar.</p><div class="mod"><h4>Diagnóstico socioterritorial</h4><dl><dt>Problema</dt><dd>No se sabe con quién hablar ni qué conflicto puede retrasar o suspender la obra.</dd><dt>Incluye</dt><dd>Actores y liderazgos; historia de conflictos y compromisos previos, incluidos los del Estado; riesgos sociales y de seguridad; señales tempranas; estimación, con datos de la empresa, del costo de los días perdidos.</dd><dt>Recibe la empresa</dt><dd>Mapa de actores y de conflictividad, informe de riesgos priorizados y costo estimado de las suspensiones.</dd></dl><span class="cuando">Antes de iniciar o con la obra en curso</span></div><div class="mod"><h4>Estudio del personal local</h4><dl><dt>Problema</dt><dd>Se va el personal contratado en la zona y no se sabe por qué.</dd><dt>Incluye</dt><dd>Registros de personal, entrevistas y grupos focales.</dd><dt>Recibe la empresa</dt><dd>Tablero, causas por territorio y plan de retención.</dd></dl><span class="cuando">En cualquier momento · ver anexo A3</span></div></div><div class="linea"><div class="verbo"><i>2</i><h3>Dialogar</h3></div><p class="intro">Que cada espacio de diálogo esté preparado, con agenda, información y responsables claros.</p><div class="mod"><h4>Estrategia y facilitación de diálogo</h4><dl><dt>Problema</dt><dd>Reuniones que terminan en nuevas tensiones.</dd><dt>Incluye</dt><dd>Hoja de ruta por proyecto; preparación de cada parte por separado; mediación, moderación y actas; protocolos para comunidades campesinas, indígenas y negras.</dd><dt>Recibe la empresa</dt><dd>Espacios preparados y documentados.</dd></dl><span class="cuando">Durante la obra</span></div><div class="mod"><h4>Articulación institucional</h4><dl><dt>Problema</dt><dd>Reclamos que dependen del Estado y que la empresa sola no puede resolver.</dd><dt>Incluye</dt><dd>Interlocución con alcaldías, gobernaciones, entidades nacionales y el Ministerio del Interior; Defensoría y Procuraduría como garantes.</dd><dt>Recibe la empresa</dt><dd>Compromisos institucionales identificados, con responsable.</dd></dl><span class="cuando">Cuando el reclamo supera a la obra</span></div></div><div class="linea"><div class="verbo"><i>3</i><h3>Cumplir</h3></div><p class="intro">Detectar a tiempo los compromisos en riesgo de incumplirse y actuar antes de que escalen.</p><div class="mod"><h4>Seguimiento de compromisos</h4><dl><dt>Problema</dt><dd>Acuerdos sin responsable ni fecha.</dd><dt>Incluye</dt><dd>Matriz de compromisos; tablero con días de obra perdidos y alertas; indicadores de la calidad del diálogo; rendición de cuentas a la comunidad.</dd><dt>Recibe la empresa</dt><dd>Tablero actualizado e informes periódicos.</dd></dl><span class="cuando">Después de cada acuerdo</span></div></div><div class="linea"><div class="verbo"><i>4</i><h3>Decidir y construir capacidad</h3></div><p class="intro">Decidir con información del territorio y dejar procedimientos propios.</p><div class="mod"><h4>Asesoría a junta y gerencia</h4><dl><dt>Problema</dt><dd>Decisiones tomadas solo con el cronograma de obra.</dd><dt>Incluye</dt><dd>Informes ejecutivos de riesgo social; formación de residentes y equipos sociales; acompañamiento en momentos de crisis.</dd><dt>Recibe la empresa</dt><dd>Informes y sesiones de trabajo con la junta.</dd></dl><span class="cuando">Continua</span></div><div class="mod"><h4>Procedimientos para el diálogo social</h4><dl><dt>Problema</dt><dd>Cada proyecto empieza de cero.</dd><dt>Incluye</dt><dd>Política de relacionamiento; roles y equipo social mínimo; protocolos; mecanismo de quejas con plazos; ruta de escalamiento ante bloqueos o amenazas; uso de las instancias públicas de diálogo social vigentes.</dd><dt>Recibe la empresa</dt><dd>Procedimientos aprobados por la junta.</dd></dl><span class="cuando">Para proyectos actuales y futuros</span></div></div></div></div>
     </details>
     <details class="anx" id="a3"><summary><span>A3</span>El estudio del personal local</summary>
       <div class="anx-c">
@@ -877,7 +952,7 @@ details.anx[open] > summary::after{content:"−"}
           <div style="display:grid;gap:.6rem"><h3>Cómo se hace</h3><ol class="j"><li>Análisis de los registros de personal: ingresos, retiros y permanencia por proyecto, cargo y origen.</li><li>Entrevistas a trabajadores activos y retirados, supervisores, residentes y liderazgos comunitarios, con consentimiento informado y protección de datos.</li><li>Grupos focales en cada territorio priorizado.</li><li>Comparación entre proyectos con alta y baja rotación para identificar lo que funciona.</li></ol></div>
           <div style="display:grid;gap:.6rem"><h3>Qué recibe la empresa</h3><ul class="j"><li>Tablero de rotación por proyecto.</li><li>Informe de causas por territorio.</li><li>Plan de retención con medidas concretas y su costo estimado.</li></ul><p class="j"><b>Duración:</b> 10 a 12 semanas con un equipo de campo de apoyo, o 14 a 16 semanas si el trabajo de campo lo hace solo el consultor. Puede empezar en la semana 3 de la opción escogida.</p></div>
         </div>
-        <p class="ref j">En la revisión documental no identificamos estudios específicos sobre la permanencia del personal local en obras viales rurales de Colombia; el estudio aporta evidencia propia para INGEVÍAS. Referencias: Abdolmaleki, G., Naismith, N., Ghodrati, N., Poshdar, M. y Babaeian Jelodar, M. (2024). An analysis of the literature on construction employee turnover. <i>Construction Management and Economics</i>, 42(9), 822-846. Torres Nova, E. Y. (2018). Aspectos que afectan la gestión del talento humano en el sector construcción en Colombia. <i>Signos</i>, 10(2), 103-117.</p>
+        <p class="ref j">En la revisión documental no se identificaron estudios específicos sobre la permanencia del personal local en obras viales rurales de Colombia; el estudio aporta evidencia propia para INGEVÍAS. Referencias: Abdolmaleki, G., Naismith, N., Ghodrati, N., Poshdar, M. y Babaeian Jelodar, M. (2024). An analysis of the literature on construction employee turnover. <i>Construction Management and Economics</i>, 42(9), 822-846. Torres Nova, E. Y. (2018). Aspectos que afectan la gestión del talento humano en el sector construcción en Colombia. <i>Signos</i>, 10(2), 103-117.</p>
       </div>
     </details>
     <details class="anx" id="a4"><summary><span>A4</span>Las fases del trabajo en detalle</summary>
@@ -889,7 +964,7 @@ details.anx[open] > summary::after{content:"−"}
     </details>
     <details class="anx" id="a5"><summary><span>A5</span>Resultados principales del banco de casos</summary>
       <div class="anx-c"><div class="banco" style="margin-top:0">
-        <div><p class="label">Investigación propia</p><p class="big">29</p><h3>casos y referencias de conflictividad en obras</h3><p class="j">Elaboré un banco de casos colombianos e internacionales de vías, energía, minería e hidrocarburos: qué detonó cada conflicto, quién intervino y qué pasó después, con su fuente pública. Es la base del diagnóstico.</p></div>
+        <div><p class="label">Investigación propia sobre el sector</p><p class="big">29</p><h3>casos y referencias de conflictividad en obras de infraestructura</h3><p class="j">Jorge Gil elaboró un banco de casos colombianos e internacionales de vías, energía, minería e hidrocarburos: qué detonó cada conflicto, quién intervino y qué pasó después, con su fuente pública. No incluye proyectos de INGEVÍAS. Es la base del diagnóstico.</p></div>
         <div><p class="label">Hallazgos</p><ul class="j">
           <li>En varios casos, los bloqueos tenían causas ajenas a la obra: la vía funcionó como lugar para reclamar al Estado (Medellín–Quibdó, Rosas, Transversal del Libertador).</li>
           <li>Los acuerdos sin seguimiento o sin todos los actores pueden reabrir el conflicto (Medellín–Quibdó, Campo Rubiales).</li>
